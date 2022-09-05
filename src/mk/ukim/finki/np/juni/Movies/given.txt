@@ -1,0 +1,429 @@
+Да се напише класа за филм Movie во која се чува:
+
+наслов
+режисер
+жанр
+рејтинг
+Да се имплементира конструктор со следните аргументи Movie(String title, String director, String genre, float rating).
+
+Потоа да се напише класа MovieCollection во која се чува колекција од филмови. Во оваа класа треба да се имплементираат следните методи:
+
+public void addMovie(Movie movie) - додавање филм во колекцијата
+public void printByGenre(String genre) - ги печати сите филмови од проследениот жанр (се споредува стрингот без разлика на мали и големи букви), сортирани според насловот на филмот (ако насловот е ист, се сортираат според рејтингот).
+public List<Movie> getTopRatedN(int n) - враќа листа на најдобро рангираните N филмови (ако има помалку од N филмови во колекцијата, ги враќа сите).
+public Map<String, Integer> getCountByDirector(int n) - враќа мапа од имињата на режисерите со бројот на филмови кои тие го режирале сортирани според имињата на режисерите.
+
+
+input:
+6 3
+Backbeat:Iain Softley:Music:6.7
+An Acceptable Loss:Joe Chappelle:Drama:7.2
+Thieves Quartet:Joe Chappelle:Thriller:4.0
+Takedown:Joe Chappelle:Crime:6.3
+Adult Life Skills:Rachel Tunnard:Comedy:6.2
+Hackers:Iain Softley:Crime:4.3
+K-PAX:Iain Softley:Thriller:7.4
+
+output:
+=== PRINT BY GENRE ===
+GENRE: Comedy
+Adult Life Skills (Rachel Tunnard, Comedy) 6.20
+GENRE: Crime
+Hackers (Iain Softley, Crime) 4.30
+Takedown (Joe Chappelle, Crime) 6.30
+GENRE: Drama
+An Acceptable Loss (Joe Chappelle, Drama) 7.20
+GENRE: Music
+Backbeat (Iain Softley, Music) 6.70
+GENRE: Thriller
+K-PAX (Iain Softley, Thriller) 7.40
+Thieves Quartet (Joe Chappelle, Thriller) 4.00
+=== TOP N BY RATING ===
+K-PAX (Iain Softley, Thriller) 7.40
+An Acceptable Loss (Joe Chappelle, Drama) 7.20
+Backbeat (Iain Softley, Music) 6.70
+=== COUNT BY DIRECTOR ===
+Iain Softley: 3
+Joe Chappelle: 3
+Rachel Tunnard: 1
+=== PRINT BY GENRE ===
+GENRE: Comedy
+Adult Life Skills (Rachel Tunnard, Comedy) 6.20
+GENRE: Crime
+Hackers (Iain Softley, Crime) 4.30
+Takedown (Joe Chappelle, Crime) 6.30
+GENRE: Drama
+An Acceptable Loss (Joe Chappelle, Drama) 7.20
+GENRE: Music
+Backbeat (Iain Softley, Music) 6.70
+GENRE: Thriller
+K-PAX (Iain Softley, Thriller) 7.40
+Thieves Quartet (Joe Chappelle, Thriller) 4.00
+=== TOP N BY RATING ===
+K-PAX (Iain Softley, Thriller) 7.40
+An Acceptable Loss (Joe Chappelle, Drama) 7.20
+Backbeat (Iain Softley, Music) 6.70
+=== COUNT BY DIRECTOR ===
+100 20
+Movie U:G:A:30.40
+Movie O:A:C:11.18
+Movie T:C:A:23.26
+Movie R:A:A:5.13
+Movie T:A:E:25.12
+Movie E:E:E:39.29
+Movie K:E:E:17.52
+Movie E:E:B:10.62
+Movie D:B:A:20.96
+Movie B:A:E:45.33
+Movie S:E:B:43.51
+Movie R:B:A:18.39
+Movie O:A:E:21.83
+Movie S:E:A:17.23
+Movie Y:A:D:5.00
+Movie W:D:A:45.44
+Movie Q:A:B:26.62
+Movie M:B:B:22.63
+Movie X:B:B:7.79
+Movie O:B:B:12.18
+Movie P:B:D:15.55
+Movie U:D:D:31.86
+Movie D:D:E:30.46
+Movie I:E:B:17.83
+Movie H:B:D:48.87
+Movie D:D:A:6.00
+Movie D:A:B:22.06
+Movie T:B:B:4.42
+Movie V:B:C:6.33
+Movie Y:C:C:25.09
+Movie H:C:B:17.23
+Movie M:B:C:26.92
+Movie Q:C:B:20.58
+Movie T:B:B:24.48
+Movie B:B:C:6.89
+Movie Q:C:C:33.58
+Movie C:C:E:20.70
+Movie A:E:C:35.40
+Movie G:C:D:11.66
+Movie V:D:E:44.56
+Movie L:E:A:29.81
+Movie L:A:E:27.10
+Movie W:E:B:22.22
+Movie B:B:C:29.28
+Movie Q:C:E:17.06
+Movie T:E:C:31.41
+Movie B:C:D:35.47
+Movie I:D:A:13.42
+Movie A:A:A:29.41
+Movie X:A:A:38.61
+Movie S:A:C:41.50
+Movie D:C:B:3.31
+Movie K:B:E:47.46
+Movie C:E:E:38.98
+Movie Q:E:B:46.65
+Movie Q:B:C:46.54
+Movie G:C:C:40.18
+Movie G:C:E:9.69
+Movie U:E:A:27.13
+Movie T:A:D:11.81
+Movie I:D:B:34.51
+Movie O:B:E:2.52
+Movie E:E:D:33.08
+Movie U:D:E:31.17
+Movie D:E:E:6.94
+Movie Z:E:C:17.41
+Movie D:C:C:10.20
+Movie W:C:B:45.58
+Movie Z:B:B:20.60
+Movie T:B:B:3.04
+Movie M:B:C:33.49
+Movie G:C:D:7.74
+Movie X:D:D:46.09
+Movie F:D:A:32.31
+Movie Q:A:C:12.86
+Movie U:C:B:12.38
+Movie C:B:A:47.42
+Movie J:A:D:17.17
+Movie F:D:B:19.63
+Movie O:B:A:12.39
+Movie F:A:A:31.51
+Movie A:A:C:9.59
+Movie U:C:E:36.68
+Movie S:E:B:24.38
+Movie A:B:B:0.79
+Movie I:B:A:21.25
+Movie T:A:D:4.46
+Movie Y:D:A:41.70
+Movie C:A:D:31.39
+Movie O:D:B:10.19
+Movie F:B:A:37.17
+Movie V:A:E:4.20
+Movie U:E:E:25.10
+Movie S:E:B:30.16
+Movie B:B:B:48.85
+Movie S:B:B:19.74
+Movie P:B:A:3.74
+Movie I:A:E:11.36
+Movie P:E:A:33.72
+Movie V:A:D:30.24
+=== PRINT BY GENRE ===
+GENRE: A
+Movie A (A, A) 29.41
+Movie C (B, A) 47.42
+Movie D (D, A) 6.00
+Movie D (B, A) 20.96
+Movie F (A, A) 31.51
+Movie F (D, A) 32.31
+Movie F (B, A) 37.17
+Movie I (D, A) 13.42
+Movie I (B, A) 21.25
+Movie L (E, A) 29.81
+Movie O (B, A) 12.39
+Movie P (B, A) 3.74
+Movie P (E, A) 33.72
+Movie R (A, A) 5.13
+Movie R (B, A) 18.39
+Movie S (E, A) 17.23
+Movie T (C, A) 23.26
+Movie U (E, A) 27.13
+Movie U (G, A) 30.40
+Movie W (D, A) 45.44
+Movie X (A, A) 38.61
+Movie Y (D, A) 41.70
+GENRE: B
+Movie A (B, B) 0.79
+Movie B (B, B) 48.85
+Movie D (C, B) 3.31
+Movie D (A, B) 22.06
+Movie E (E, B) 10.62
+Movie F (D, B) 19.63
+Movie H (C, B) 17.23
+Movie I (E, B) 17.83
+Movie I (D, B) 34.51
+Movie M (B, B) 22.63
+Movie O (D, B) 10.19
+Movie O (B, B) 12.18
+Movie Q (C, B) 20.58
+Movie Q (A, B) 26.62
+Movie Q (E, B) 46.65
+Movie S (B, B) 19.74
+Movie S (E, B) 24.38
+Movie S (E, B) 30.16
+Movie S (E, B) 43.51
+Movie T (B, B) 3.04
+Movie T (B, B) 4.42
+Movie T (B, B) 24.48
+Movie U (C, B) 12.38
+Movie W (E, B) 22.22
+Movie W (C, B) 45.58
+Movie X (B, B) 7.79
+Movie Z (B, B) 20.60
+GENRE: C
+Movie A (A, C) 9.59
+Movie A (E, C) 35.40
+Movie B (B, C) 6.89
+Movie B (B, C) 29.28
+Movie D (C, C) 10.20
+Movie G (C, C) 40.18
+Movie M (B, C) 26.92
+Movie M (B, C) 33.49
+Movie O (A, C) 11.18
+Movie Q (A, C) 12.86
+Movie Q (C, C) 33.58
+Movie Q (B, C) 46.54
+Movie S (A, C) 41.50
+Movie T (E, C) 31.41
+Movie V (B, C) 6.33
+Movie Y (C, C) 25.09
+Movie Z (E, C) 17.41
+GENRE: D
+Movie B (C, D) 35.47
+Movie C (A, D) 31.39
+Movie E (E, D) 33.08
+Movie G (C, D) 7.74
+Movie G (C, D) 11.66
+Movie H (B, D) 48.87
+Movie J (A, D) 17.17
+Movie P (B, D) 15.55
+Movie T (A, D) 4.46
+Movie T (A, D) 11.81
+Movie U (D, D) 31.86
+Movie V (A, D) 30.24
+Movie X (D, D) 46.09
+Movie Y (A, D) 5.00
+GENRE: E
+Movie B (A, E) 45.33
+Movie C (C, E) 20.70
+Movie C (E, E) 38.98
+Movie D (E, E) 6.94
+Movie D (D, E) 30.46
+Movie E (E, E) 39.29
+Movie G (C, E) 9.69
+Movie I (A, E) 11.36
+Movie K (E, E) 17.52
+Movie K (B, E) 47.46
+Movie L (A, E) 27.10
+Movie O (B, E) 2.52
+Movie O (A, E) 21.83
+Movie Q (C, E) 17.06
+Movie T (A, E) 25.12
+Movie U (E, E) 25.10
+Movie U (D, E) 31.17
+Movie U (C, E) 36.68
+Movie V (A, E) 4.20
+Movie V (D, E) 44.56
+=== TOP N BY RATING ===
+Movie H (B, D) 48.87
+Movie B (B, B) 48.85
+Movie K (B, E) 47.46
+Movie C (B, A) 47.42
+Movie Q (E, B) 46.65
+Movie Q (B, C) 46.54
+Movie X (D, D) 46.09
+Movie W (C, B) 45.58
+Movie W (D, A) 45.44
+Movie B (A, E) 45.33
+Movie V (D, E) 44.56
+Movie S (E, B) 43.51
+Movie Y (D, A) 41.70
+Movie S (A, C) 41.50
+Movie G (C, C) 40.18
+Movie E (E, E) 39.29
+Movie C (E, E) 38.98
+Movie X (A, A) 38.61
+Movie F (B, A) 37.17
+Movie U (C, E) 36.68
+=== COUNT BY DIRECTOR ===
+A: 22
+B: 27
+C: 17
+D: 13
+E: 20
+G: 1
+=== PRINT BY GENRE ===
+GENRE: A
+Movie A (A, A) 29.41
+Movie C (B, A) 47.42
+Movie D (D, A) 6.00
+Movie D (B, A) 20.96
+Movie F (A, A) 31.51
+Movie F (D, A) 32.31
+Movie F (B, A) 37.17
+Movie I (D, A) 13.42
+Movie I (B, A) 21.25
+Movie L (E, A) 29.81
+Movie O (B, A) 12.39
+Movie P (B, A) 3.74
+Movie P (E, A) 33.72
+Movie R (A, A) 5.13
+Movie R (B, A) 18.39
+Movie S (E, A) 17.23
+Movie T (C, A) 23.26
+Movie U (E, A) 27.13
+Movie U (G, A) 30.40
+Movie W (D, A) 45.44
+Movie X (A, A) 38.61
+Movie Y (D, A) 41.70
+GENRE: B
+Movie A (B, B) 0.79
+Movie B (B, B) 48.85
+Movie D (C, B) 3.31
+Movie D (A, B) 22.06
+Movie E (E, B) 10.62
+Movie F (D, B) 19.63
+Movie H (C, B) 17.23
+Movie I (E, B) 17.83
+Movie I (D, B) 34.51
+Movie M (B, B) 22.63
+Movie O (D, B) 10.19
+Movie O (B, B) 12.18
+Movie Q (C, B) 20.58
+Movie Q (A, B) 26.62
+Movie Q (E, B) 46.65
+Movie S (B, B) 19.74
+Movie S (E, B) 24.38
+Movie S (E, B) 30.16
+Movie S (E, B) 43.51
+Movie T (B, B) 3.04
+Movie T (B, B) 4.42
+Movie T (B, B) 24.48
+Movie U (C, B) 12.38
+Movie W (E, B) 22.22
+Movie W (C, B) 45.58
+Movie X (B, B) 7.79
+Movie Z (B, B) 20.60
+GENRE: C
+Movie A (A, C) 9.59
+Movie A (E, C) 35.40
+Movie B (B, C) 6.89
+Movie B (B, C) 29.28
+Movie D (C, C) 10.20
+Movie G (C, C) 40.18
+Movie M (B, C) 26.92
+Movie M (B, C) 33.49
+Movie O (A, C) 11.18
+Movie Q (A, C) 12.86
+Movie Q (C, C) 33.58
+Movie Q (B, C) 46.54
+Movie S (A, C) 41.50
+Movie T (E, C) 31.41
+Movie V (B, C) 6.33
+Movie Y (C, C) 25.09
+Movie Z (E, C) 17.41
+GENRE: D
+Movie B (C, D) 35.47
+Movie C (A, D) 31.39
+Movie E (E, D) 33.08
+Movie G (C, D) 7.74
+Movie G (C, D) 11.66
+Movie H (B, D) 48.87
+Movie J (A, D) 17.17
+Movie P (B, D) 15.55
+Movie T (A, D) 4.46
+Movie T (A, D) 11.81
+Movie U (D, D) 31.86
+Movie V (A, D) 30.24
+Movie X (D, D) 46.09
+Movie Y (A, D) 5.00
+GENRE: E
+Movie B (A, E) 45.33
+Movie C (C, E) 20.70
+Movie C (E, E) 38.98
+Movie D (E, E) 6.94
+Movie D (D, E) 30.46
+Movie E (E, E) 39.29
+Movie G (C, E) 9.69
+Movie I (A, E) 11.36
+Movie K (E, E) 17.52
+Movie K (B, E) 47.46
+Movie L (A, E) 27.10
+Movie O (B, E) 2.52
+Movie O (A, E) 21.83
+Movie Q (C, E) 17.06
+Movie T (A, E) 25.12
+Movie U (E, E) 25.10
+Movie U (D, E) 31.17
+Movie U (C, E) 36.68
+Movie V (A, E) 4.20
+Movie V (D, E) 44.56
+=== TOP N BY RATING ===
+Movie H (B, D) 48.87
+Movie B (B, B) 48.85
+Movie K (B, E) 47.46
+Movie C (B, A) 47.42
+Movie Q (E, B) 46.65
+Movie Q (B, C) 46.54
+Movie X (D, D) 46.09
+Movie W (C, B) 45.58
+Movie W (D, A) 45.44
+Movie B (A, E) 45.33
+Movie V (D, E) 44.56
+Movie S (E, B) 43.51
+Movie Y (D, A) 41.70
+Movie S (A, C) 41.50
+Movie G (C, C) 40.18
+Movie E (E, E) 39.29
+Movie C (E, E) 38.98
+Movie X (A, A) 38.61
+Movie F (B, A) 37.17
+Movie U (C, E) 36.68
+=== COUNT BY DIRECTOR ===

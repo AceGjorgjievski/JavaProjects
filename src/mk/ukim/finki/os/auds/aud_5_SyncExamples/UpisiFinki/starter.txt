@@ -1,0 +1,54 @@
+public class UpisiFinkiGiven {
+
+    public static void init() {
+
+    }
+
+    public static class Clen extends Thread{
+
+
+
+        public void init() {
+
+        }
+
+        public void execute() throws InterruptedException {
+
+        }
+
+        public void zapisi() {
+            System.out.println("Zapisuvam student...");
+        }
+
+        @Override
+        public void run() {
+            try {
+                execute();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static class Student extends Thread{
+
+        public void execute() throws InterruptedException {
+
+        }
+
+        public void ostaviDokumenti() {
+            System.out.println("Ostavam dokumenti...");
+        }
+
+        @Override
+        public void run() {
+            try {
+                execute();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
+}

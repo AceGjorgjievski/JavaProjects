@@ -1,0 +1,165 @@
+Да се имплементира апликација за една компанија која продава пици преку класата PizzaApp. Во класата се чуваат информации за регистрираните корисници на апликацијата и нивните нарачки. За класата да се имплементираат следните методи:
+
+Конструктор PizzaApp без аргументи
+void registerUser (String email,String name, String phoneNumber) - метод за регистрирање на корисник на апликацијата. За секој корисник покрај горенаведените информации треба да се чува и уникатно ID, пришто прворегистрираниот корисник добива ID=1, вториот ID=2 итн. Да се фрли исклучот од тип UserAlreadyExistsException доколку се проба да се регистрира корисник со email кој веќе постои. Справете се со исклучокот на потребното место.
+makeOrder(String email, String pizzaName, float pizzaPrice) - метод за нарачка на пица pizzaName со цена pizzaPrice oд страна на корисникот со адреса email.
+void printRevenueByPizza() - метод кој ги печати пиците кои се купени преку апликацијата во формат pizzaName revenue. Пиците да се сортирани според вкупната заработка од секоја од нив во опаѓачки редослед.
+void printMostFrequentUserForPizza() - метод којшто за секоја пица купена преку системот ќе испечати кој/кои се корисниците кои најмногу пати ја порачувале таа пица. Пиците се сортирани лексикографски, а корисниците (доколку ги има повеќе за дадена пица), според ID-то.
+
+
+code given
+
+public class PizzaAppTest {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        PizzaApp pizzaApp = new PizzaApp();
+
+        while (sc.hasNextLine()) {
+            String line = sc.nextLine();
+            String[] parts = line.split("\\s+");
+
+            String method = parts[0];
+
+            if (method.equalsIgnoreCase("registerUser")) { //email, name, phone
+                String email = parts[1];
+                String name = parts[2];
+                String phone = parts[3];
+                pizzaApp.registerUser(email, name, phone);
+            } else if (method.equalsIgnoreCase("makeOrder")) { //email, pizzaName, price
+                String email = parts[1];
+                String pizzaName = parts[2];
+                float price = Float.parseFloat(parts[3]);
+                pizzaApp.makeOrder(email, pizzaName, price);
+            } else if (method.equalsIgnoreCase("printRevenueByPizza")) {
+                System.out.println("Print revenue by pizza");
+                pizzaApp.printRevenueByPizza();
+            } else { //printMostFrequentUserForPizza
+                System.out.println("Print most frequent user(s) by pizza");
+
+                pizzaApp.printMostFrequentUserForPizza();
+            }
+        }
+    }
+}
+
+
+
+input
+registerUser stefan.andonov@gmail.com Stefan +38976123123
+makeOrder stefan.andonov@gmail.com pepperoni 220
+printRevenueByPizza
+printMostFrequentUserForPizza
+
+out
+Print revenue by pizza
+pepperoni 220.00
+Print most frequent user(s) by pizza
+Pizza: pepperoni
+ID email frequency
+1 stefan.andonov@gmail.com 1
+
+
+in
+
+registerUser stefan.andonov@gmail.com Stefan +38976123123
+makeOrder stefan.andonov@gmail.com pepperoni 220
+makeOrder stefan.andonov@gmail.com tricolori 350
+printRevenueByPizza
+printMostFrequentUserForPizza
+
+out
+
+Print revenue by pizza
+tricolori 350.00
+pepperoni 220.00
+Print most frequent user(s) by pizza
+Pizza: pepperoni
+ID email frequency
+1 stefan.andonov@gmail.com 1
+Pizza: tricolori
+ID email frequency
+1 stefan.andonov@gmail.com 1
+
+
+===================================================================
+
+
+Да се имплементира апликација за примање на нарачки за пици PizzaReceipts. За класата да се имплементираат следните методи:
+
+Конструктор PizzaReceipts ()
+void readOrders (InputStream is) - метод за вчитување на нарачките за пица од влезен поток. Секоја нарачка е во нов ред и е претставена во следниот формат: user pizzaBase;ing1;ing2;ing3;ing4;ing5;ing6. user, претставува име на корисникот што ја нарачал пицата. pizzаBase, претставува основата на пицата и истата може да биде whiteSauce или redSauce. Секоја пица може да има од 0 до 6 додатоци (преставени преку ing1,...,ing6). Додатоците може да бидат од тип pepperoni, mushrooms и mozzarella. Во една пица може да има најмногу 2 исти додатоци. Да се фрли исклучок од тип InvalidPizzaOrder доколку пицата има повеќе од 6 додатоци или некој додаток е наведен повеќе од 2 пати. Со исклучокот да се справите на соодветното место така што нема да се додаде таа пица во системот, но исто така нема да се попречи додавањето на останатите пици.
+void printRevenueByUser (OutputStream os) - метод кој ќе испечати на излезен поток колку промет остварила пицеријата од сите корисници во формат user orders_count orders_price_average$ total_revenue_from_user$. Информациите да се сортирани во опаѓачки редослед според просечната цена на нарачаните пици од корисникот. На крај да се испечати и вкупниот промет.
+void printUserOrders (OutputStream os, String user) - метод кој ќе ги испечати на излезен поток сите нарачани пици на корисникот user, сортирани во опаѓачки редослед според цената на пицата.
+Map<String, Integer> usersByPizzaIngredient (String ingredient)- метод којшто ќе врати мапа во која клучот е името на корисникот, а вредноста е бројот колку пати корисникот нарачал пица која ја содржи состојката ingredient барем еднаш.
+Цената на пицата се пресметува како сума на основата на пицата и сите состојки. Ценовникот на пицеријата е даден на сликата подолу.
+
+Решенијата кои нема да користат полиморфизам и соодветен шаблон за дизајн на софтвер ќе бидат оценети со најмногу 60% од предвидените поени.
+
+
+
+pizza receips
+=====
+public class PizzaReceiptsTest {
+
+    public static void printMap(Map<String, Integer> map) {
+        map.forEach((k, v) -> System.out.println(String.format("%s -> %d", k, v)));
+    }
+
+    public static void main(String[] args) {
+        PizzaReceipts pizzaReceipts = new PizzaReceipts();
+
+        System.out.println("READING DATA FROM INPUT STREAM");
+        pizzaReceipts.readOrders(System.in);
+
+        System.out.println("TESTING printRevenueByUser");
+        pizzaReceipts.printRevenueByUser(System.out);
+
+        System.out.println("TESTING printUserOrders");
+        System.out.println("Stefan");
+        pizzaReceipts.printUserOrders(System.out, "Stefan");
+        System.out.println("Ana");
+        pizzaReceipts.printUserOrders(System.out, "Ana");
+        System.out.println("Gjorgji");
+        pizzaReceipts.printUserOrders(System.out, "Gjorgji");
+
+        System.out.println("TESTING usersByPizzaIngredient");
+        Map<String, Integer> pepperoniMap = pizzaReceipts.usersByPizzaIngredient("pepperoni");
+        Map<String, Integer> mushroomsMap = pizzaReceipts.usersByPizzaIngredient("mushrooms");
+        Map<String, Integer> mozzarellaMap = pizzaReceipts.usersByPizzaIngredient("mozzarella");
+
+        System.out.println("PEPPERONI");
+        printMap(pepperoniMap);
+        System.out.println("MUSHROOMS");
+        printMap(mushroomsMap);
+        System.out.println("MOZZARELLA");
+        printMap(mozzarellaMap);
+
+    }
+}
+
+
+in
+
+===
+Stefan whiteSauce;pepperoni;mushrooms;mozzarella;pepperoni
+
+
+out
+===
+READING DATA FROM INPUT STREAM
+TESTING printRevenueByUser
+Stefan 1 18.40$ 18.40$
+Total revenue 18.40$
+TESTING printUserOrders
+Stefan
+Pizza description: White sauce pizza with pepperoniX2, mushrooms, mozzarella Price: 18.40$
+Ana
+Gjorgji
+TESTING usersByPizzaIngredient
+PEPPERONI
+Stefan -> 1
+MUSHROOMS
+Stefan -> 1
+MOZZARELLA
+Stefan -> 1

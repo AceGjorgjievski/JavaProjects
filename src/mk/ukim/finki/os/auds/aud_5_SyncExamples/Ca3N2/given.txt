@@ -1,0 +1,146 @@
+https://github.com/ristes/synchronization-examples/tree/master/src/mk/ukim/finki/os/synchronization/exam14/march/ca3n2
+
+
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.concurrent.Semaphore;
+
+class CalciumNitrideState {
+
+
+    public void bond(){}
+    public void validate(){}
+}
+
+
+public class CalciumNitride {
+
+
+    public static int countCA3;
+
+    Semaphore ca3;
+    Semaphore n2;
+    Semaphore caHere;
+    Semaphore nHere;
+    Semaphore ready;
+    Semaphore bondingDone;
+    Semaphore canLeave;
+
+    Semaphore lock;
+
+
+    public static void init() {
+        countCA3 = 0;
+        ca3 = new Semaphore(3);
+        n2 = new Semaphore(2);
+        caHere = new Semaphore(0);
+        nHere = new Semaphore(0);
+        ready = new Semaphore(0);
+        bondingDone = new Semaphore(0);
+        canLeave = new Semaphore(0);
+
+        lock = new Semaphore(1);
+    }
+
+    public static class Calcium extends Thread {
+
+        public Calcium(int numRuns) {
+           // super(numRuns);
+        }
+
+        //@Override
+        public void execute() throws InterruptedException {
+            ca3.acquire();
+            lock.acquire();
+            countCA3++;
+            if(countCA3 == 3) {
+                countCA3 = 0;
+                lock.release();
+
+                nHere.acquire(2);
+                ready.release(4);
+                bond();
+
+                bondingDone.acquire(4);
+                canLeave.release(4);
+                validate();
+
+                ca3.release();
+            } else {
+                lock.release();
+
+                ready.acquire();
+                bond();
+                bondingDone.release();
+                canLeave.acquire();
+
+                caHere.release();
+            }
+        }
+    }
+
+    public static class Nitrogen extends Thread {
+
+        public Nitrogen(int numRuns) {
+            //super(numRuns);
+        }
+
+       // @Override
+        public void execute() throws InterruptedException {
+            n2.acquire();
+            nHere.release();
+            ready.acquire();
+
+            bond();
+
+            bondingDone.release();
+            canLeave.acquire();
+
+            n2.release();
+        }
+
+    }
+
+    static CalciumNitrideState state = new CalciumNitrideState();
+
+    public static void main(String[] args) {
+        for (int i = 0; i < 10; i++) {
+            run();
+        }
+    }
+
+    public static void run() {
+        try {
+            Scanner s = new Scanner(System.in);
+            int numRuns = 1;
+            int numIterations = 100;
+            s.close();
+
+            HashSet<Thread> threads = new HashSet<Thread>();
+
+            for (int i = 0; i < numIterations; i++) {
+                Nitrogen n = new Nitrogen(numRuns);
+                threads.add(n);
+                Calcium ca = new Calcium(numRuns);
+                threads.add(ca);
+                ca = new Calcium(numRuns);
+                threads.add(ca);
+                n = new Nitrogen(numRuns);
+                threads.add(n);
+                ca = new Calcium(numRuns);
+                threads.add(ca);
+            }
+
+            init();
+
+            //ProblemExecution.start(threads, state);
+            System.out.println(new Date().getTime());
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+}
+
+

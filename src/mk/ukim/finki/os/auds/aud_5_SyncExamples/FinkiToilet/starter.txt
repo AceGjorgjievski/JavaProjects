@@ -1,0 +1,65 @@
+public class FinkiToiletGiven {
+
+    public static class Toilet {
+
+        public void vlezi() {
+            System.out.println("Vleguva...");
+        }
+
+        public void izlezi() {
+            System.out.println("Izleguva...");
+        }
+    }
+
+
+
+    public static void init() {
+
+    }
+
+    public static class Man extends Thread{
+
+        private Toilet toilet;
+
+        public Man(Toilet toilet) {
+            this.toilet = toilet;
+        }
+
+        public void enter() throws InterruptedException {
+
+
+        }
+
+        public void exit() throws InterruptedException {
+
+        }
+
+        @Override
+        public void run() {
+            super.run();
+        }
+    }
+
+    public static class Woman extends Thread{
+
+        private Toilet toilet;
+
+        public Woman(Toilet toilet) {
+            this.toilet = toilet;
+        }
+
+        public void enter() throws InterruptedException {
+
+        }
+
+        public void exit() throws InterruptedException {
+
+        }
+
+        @Override
+        public void run() {
+            super.run();
+        }
+    }
+
+}

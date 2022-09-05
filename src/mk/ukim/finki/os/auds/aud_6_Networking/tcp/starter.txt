@@ -1,0 +1,190 @@
+
+
+        TCP SERVER
+
+
+public class TCPServer extends Thread {
+
+
+    private int port;
+
+    public TCPServer(int port) {
+        this.port = port;
+    }
+
+    @Override
+    public void run() {
+
+        ServerSocket server = null; //socket koj postojano kje bide aktiven, kje slusha za konekcii, blokira ako nema konekcii
+        System.out.println("Server is starting...");
+
+        try {
+            server = new ServerSocket(this.port);//ako portata e zafatena, togash se frla excp
+
+        } catch (IOException e) {
+            System.err.println("TCP Server failed.");
+            return;
+        }
+
+        System.out.println("TCP Server is started.");
+        System.out.println("Waiting for connection..");
+
+        try {
+
+            while (true) {
+                //end-point megju server i client
+                Socket socket = null;
+                //dodeka ne pristigne novo baranja, blokiraj na ovaa linija
+                //kanal preku koj se vrshi komunikacija - socket
+                socket = server.accept();
+                new WorkerThread(socket).start();//shtom se dobie nova konekcija, instancirame nov WT
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) {
+        TCPServer server = new TCPServer(9000);
+        server.start();
+    }
+}
+
+
+
+                    ==  =   =   =   =   =   ==      ==  =   =   =   =           ==  =   =   =   =
+
+                                    WORKER THREAD
+
+
+public class WorkerThread extends Thread {
+
+
+    private Socket socket;
+
+    public WorkerThread(Socket socket) {
+        this.socket = socket;
+    }
+
+    @Override
+    public void run() {
+
+        BufferedReader reader = null;
+        PrintWriter writer = null;
+
+        try {
+            reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            //chitame podatoci prateni od dalechen pc ^ (od klient -> srw)
+            writer = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()));
+            //prakjame podatoci do dalechen pc ^ (od srw -> klient)
+
+            System.out.printf("Connected: %s:%d\n",
+                    socket.getInetAddress(),
+                    socket.getPort());
+
+            String line = null;
+
+            while((line = reader.readLine()) != null) {//mozhe i so -> !.isEmpty()
+                System.out.printf("Message from %s:%d --- %s\n",
+                        socket.getInetAddress(),
+                        socket.getPort(),
+                        line);
+                writer.write(String.format("Echo: %s\n", line));
+                writer.flush();
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            if (writer != null) writer.close();
+
+            if (socket != null) {
+                try {
+                    socket.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+    }
+}
+
+                    ==  =   =   =   =   =   ==      ==  =   =   =   =           ==  =   =   =   =
+
+                                        TCP CLIENT
+
+public class TCPClient extends Thread {
+
+
+    private String nameServer;
+    private int port;
+
+
+    public TCPClient(String nameServer, int port) {
+        this.nameServer = nameServer;
+        this.port = port;
+    }
+
+    @Override
+    public void run() {
+        //ako sakame da pechatime infor. od serverot shto gi vrakja
+        PrintWriter writer = null;
+        Scanner scanner = null;
+        //za da kreirame nova konekcija do srw, mora da se iskoristi
+        //Socket od java.net library
+        Socket socket = null;
+
+        try {
+            socket = new Socket(this.nameServer, this.port);
+            writer = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()));
+            //outputstream na socketot go koristime kaj PW za da prakjame info do srw
+            scanner = new Scanner(System.in);
+            String line = null;
+
+            System.out.println("Write messages ... ");
+
+            while (true) {
+                line = scanner.nextLine();
+                writer.println(line);
+                writer.flush();
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (socket != null) {
+                try {
+                    socket.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            if (scanner != null) {
+                scanner.close();
+            }
+
+            if (writer != null) {
+                writer.close();
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        TCPClient client = new TCPClient("localhost",9000);
+        client.start();
+    }
+
+}
+
+
+

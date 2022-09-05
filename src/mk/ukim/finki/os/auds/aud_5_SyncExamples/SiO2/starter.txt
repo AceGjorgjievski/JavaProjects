@@ -1,0 +1,58 @@
+public class SiO2Given {
+
+    public static int NUM_RUN = 50;
+
+
+
+    public static void init() {
+
+    }
+
+
+    public static class Si extends Thread {
+
+        public void bond() {
+            System.out.println("Si is bonding now.");
+        }
+
+        @Override
+        public void run() {
+            for (int i=0;i<NUM_RUN;i++) {
+                try {
+                    execute();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        public void execute() throws InterruptedException {
+
+        }
+
+    }
+
+    public static class O extends Thread {
+
+        public void execute() throws InterruptedException {
+
+        }
+
+        public void bond() {
+            System.out.println("O is bonding now.");
+        }
+
+
+        @Override
+        public void run() {
+            for (int i=0;i<NUM_RUN;i++) {
+                try {
+                    execute();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+}

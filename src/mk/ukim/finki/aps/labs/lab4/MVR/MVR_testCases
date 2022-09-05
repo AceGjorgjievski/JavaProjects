@@ -1,0 +1,400 @@
+MVR
+
+1)
+in
+==
+Aleksandar Aleksandrovski
+0
+0
+1
+Petre Petreski
+1
+0
+0
+Branka Brankovska
+0
+0
+1
+Jana Janevska
+0
+1
+0
+out
+===
+Petre Petreski
+Jana Janevska
+Aleksandar Aleksandrovski
+Branka Brankovska
+
+2)
+
+in
+==
+3
+Aleksandar Aleksandrovski
+1
+1
+1
+Petre Petreski
+1
+1
+1
+Branka Brankovska
+1
+1
+1
+out
+===
+Aleksandar Aleksandrovski
+Petre Petreski
+Branka Brankovska
+
+
+3)
+
+in
+===
+4
+Aleksandar Aleksandrovski
+1
+1
+0
+Petre Petreski
+0
+0
+1
+Branka Brankovska
+1
+0
+1
+Jana Janevska
+0
+0
+1
+
+out
+===
+Aleksandar Aleksandrovski
+Petre Petreski
+Jana Janevska
+Branka Brankovska
+
+
+4)
+
+in
+==
+5
+Aleksandar Aleksandrovski
+1
+0
+1
+Petre Petreski
+1
+0
+1
+Branka Brankovska
+1
+0
+1
+Jana Janevska
+0
+0
+1
+Nikola Nikolovski
+0
+1
+1
+
+out
+===
+Jana Janevska
+Aleksandar Aleksandrovski
+Petre Petreski
+Branka Brankovska
+Nikola Nikolovski
+
+
+5)
+
+in
+===
+8
+Aleksandar Aleksandrovski
+1
+0
+1
+Petre Petreski
+1
+0
+1
+Branka Brankovska
+1
+0
+1
+Jana Janevska
+0
+0
+1
+Nikola Nikolovski
+1
+1
+1
+Stefan Stefanovski
+0
+0
+1
+Ilija Ilievski
+1
+0
+0
+Filip Filipovski
+0
+0
+1
+out
+===
+Ilija Ilievski
+Jana Janevska
+Stefan Stefanovski
+Filip Filipovski
+Aleksandar Aleksandrovski
+Petre Petreski
+Branka Brankovska
+Nikola Nikolovski
+
+6)
+
+in
+==
+8
+Aleksandar Aleksandrovski
+1
+1
+0
+Petre Petreski
+1
+0
+1
+Branka Brankovska
+0
+1
+1
+Jana Janevska
+0
+1
+0
+Petko Petkovski
+0
+1
+0
+Trajko Trajkovski
+1
+0
+0
+Ana Anovska
+0
+0
+1
+Marko Markovski
+0
+1
+1
+
+out
+===
+Trajko Trajkovski
+Jana Janevska
+Petko Petkovski
+Aleksandar Aleksandrovski
+Ana Anovska
+Petre Petreski
+Branka Brankovska
+Marko Markovski
+
+7)
+
+in
+===
+8
+Jana Janevska
+0
+1
+0
+Petko Petkovski
+1
+0
+0
+Trajko Trajkovski
+0
+0
+1
+Ana Anovska
+0
+1
+0
+Marko Markovski
+0
+1
+1
+Aleksandar Aleksandrovski
+1
+1
+1
+Petre Petreski
+1
+0
+1
+Branka Brankovska
+0
+1
+1
+
+out
+===
+Petko Petkovski
+Jana Janevska
+Ana Anovska
+Trajko Trajkovski
+Petre Petreski
+Marko Markovski
+Branka Brankovska
+Aleksandar Aleksandrovski
+
+
+8)
+
+in
+==
+8
+Trajko Trajkovski
+0
+0
+1
+Petre Petreski
+1
+0
+1
+Branka Brankovska
+0
+1
+1
+Ana Anovska
+0
+1
+1
+Marko Markovski
+1
+0
+1
+Jana Janevska
+0
+1
+0
+Petko Petkovski
+1
+0
+0
+Aleksandar Aleksandrovski
+0
+1
+0
+
+out
+==
+
+Petko Petkovski
+Jana Janevska
+Aleksandar Aleksandrovski
+Trajko Trajkovski
+Petre Petreski
+Marko Markovski
+Branka Brankovska
+Ana Anovska
+
+
+9)
+
+in
+==
+3
+Marko Markovski
+1
+0
+1
+Jana Janevska
+0
+1
+0
+Petko Petkovski
+1
+0
+0
+
+out
+===
+
+Petko Petkovski
+Jana Janevska
+Marko Markovski
+
+
+10)
+
+in
+==
+10
+Ana Anovska
+0
+1
+1
+Marko Markovski
+1
+0
+1
+Branka Brankovska
+0
+1
+1
+Jana Janevska
+0
+1
+0
+Petko Petkovski
+1
+1
+0
+Aleksandar Aleksandrovski
+0
+1
+0
+Trajko Trajkovski
+0
+0
+1
+Petre Petreski
+1
+0
+1
+Mite Mitevski
+1
+1
+0
+Maja Majevska
+0
+1
+0
+
+out
+==
+
+Jana Janevska
+Aleksandar Aleksandrovski
+Maja Majevska
+Petko Petkovski
+Mite Mitevski
+Trajko Trajkovski
+Marko Markovski
+Petre Petreski
+Ana Anovska
+Branka Brankovska
