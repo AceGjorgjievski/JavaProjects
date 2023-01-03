@@ -2,6 +2,13 @@ package mk.ukim.finki.aps.juni.bank;
 
 import java.util.Scanner;
 
+
+
+/**
+* given text problem: https://prnt.sc/dsPSMEalDqun
+*
+*/
+
 class Client {
     private int id;
     private int loyalty;
