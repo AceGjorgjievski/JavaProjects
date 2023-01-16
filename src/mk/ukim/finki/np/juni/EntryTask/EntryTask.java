@@ -6,30 +6,6 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 
-/**
- * Влезна задача:
- * текстот беше нешто да се најде максималниот број на појавувања на даден карактер
- * во дадена линија и да се испечати тој број.
- *
- * нешто отприлика вака е влезот:
- *
- * input
- * -------
- * zzzdravoo na site
- * prijaaatno
- * naprrredno programiranje
- *
- * CTRL + D za da imate output na console posle odreden input
- *
- * output
- * ----------
- * 3 (бидејќи 'z' 3 пати се појавува)
- * 3 (бидејќи 'a' 3 пати се појавува)
- * 6 (бидејќи 'r' 6 пати се појавува)
- *
- * Решение:
- */
-
 class Line {
     Map<Character, Integer> map;
 
