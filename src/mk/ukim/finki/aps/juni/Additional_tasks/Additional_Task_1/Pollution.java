@@ -1,4 +1,4 @@
-package mk.ukim.finki.aps.juni.Ispiti.zad2Zagaduvanje;
+package mk.ukim.finki.aps.juni.Additional_tasks.Additional_Task_1;
 
 
 import java.util.LinkedList;

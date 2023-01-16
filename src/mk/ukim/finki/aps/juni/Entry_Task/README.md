@@ -1,7 +1,56 @@
-package mk.ukim.finki.aps.juni.bank;
+# Влезна испитна задача по Алгоритми и податочни структури во Јунска сесија
+
+
+###### Текст:
+
+Во рамки на една банка се користи систем кој ги чува податоците за клиентите на банката.
+Во тој систем податоците за еден клиент се дадени во формат: 
+<ins>id на корисникот (int id)</ins>,
+<ins> години на лојалност (int loyalty)</ins>, 
+<ins>број на активни тансакциски сметки (int accounts). </ins>
+</br> </br>
+Имајќи предвид дека банката постои 50 години, ниту еден корсник не може да има лојалност поголема од 50.
+</br> </br>
+Во рамки на системот, корисничите се чуваат во **две еднострано поврзани листи**.
+Во првата листа се чуваат податоците за обичните корисници (Normal), додека пак во
+втората листа се чуваат податоците за корисниците со посебни привилегии (Golden).
+</br> </br>
+За секој клиент може да се пресмета неговата важност за банката според формулата: </br>
+`importance = loyalty * 10 + accounts * 20`
+</br> </br>
+**Банката решила дека сака да направи измена, односно да го отстрани најмалку
+важниот клиент од Golden листата и да го стави на крај на Normal листата. 
+Потоа, да го отстрани најмногу важниот клиент од Normal листата и да го стави на крај на Golden листата.** </br> </br>
+<ins>**Влез:**</ins> </br>
+- Во првиот ред е даден бројот на клиент од Normal листата. </br>
+- Во вториот ред е даден бројот на дискусии од Golden листата. </br>
+- Во секој следен ред се дадени податоци за еден клиент, одделени со празно место во формат:
+`id loyalty accouants`. Притоа, прво се дадени податоците за клиентите од Normal листата, 
+па податоците за клиентите од Golden листата.</br></br>
+
+<ins>**Излез:**</ins> </br>
+- Во првиот ред <ins>`id`</ins> на сите клиенти од Normal листата. </br>
+- Во вториот ред <ins>`id`</ins> на сите клиенти од Golden листата. </br>
+
+<ins>**Забелешка:**</ins> </br>
+Даден е целосниот код на структура којашто треба да се искористи. Дадена е и тест
+класата `Bank.java` класата, со целосно имплементиран input и output.
+Потребно е да се менува само во рамки на `void bank(SLL<Client> normal, SLL<Client> golden)` функцијата.
+</br>
+
+**Притоа, бришењето треба да биде имплементирано како бришење на цел јазол, а
+додавањето како додавање на цел јазол. Промените (бришење/додавање елемент) не
+треба да се однесуваат на информациите во самите јазли туку во промени на
+врските помеѓу јазлите.**
+</br>
+**Не смее да се менува во `main` функцијата.**
+
+##### Почетен код: </br>
+
+```java
+package mk.ukim.finki.aps.juni.Entry_Task;
 
 import java.util.Scanner;
-
 
 
 class Client {
@@ -208,47 +257,6 @@ public class Bank {
 
     // todo: complete function
     public static void bank(SLL<Client> normal, SLL<Client> golden) {
-        SLLNode<Client> leastImportantGolden = golden.getFirst();
-        SLLNode<Client> nodeGolden = golden.getFirst();
-
-        while(nodeGolden != null) {
-            if(nodeGolden.element.calculateImportance() < leastImportantGolden.element.calculateImportance()) {
-                leastImportantGolden = nodeGolden;
-            }
-
-            nodeGolden = nodeGolden.succ;
-        }
-
-        //System.out.println(leastImportantGolden);
-
-        SLLNode<Client> toInsert1 = leastImportantGolden;
-        golden.delete(leastImportantGolden);
-
-        normal.insertLast(toInsert1.element);
-
-        //System.out.println(golden);
-        //System.out.println(normal);
-
-        SLLNode<Client> mostImportantNormal = normal.getFirst();
-        SLLNode<Client> nodeNormal = normal.getFirst();
-
-        while(nodeNormal != null) {
-            if(nodeNormal.element.calculateImportance() > mostImportantNormal.element.calculateImportance()) {
-                mostImportantNormal = nodeNormal;
-            }
-
-            nodeNormal = nodeNormal.succ;
-        }
-
-        SLLNode<Client> toInsert2 = mostImportantNormal;
-        normal.delete(mostImportantNormal);
-
-        golden.insertLast(toInsert2.element);
-
-
-
-
-
 
     }
 
@@ -277,3 +285,14 @@ public class Bank {
         System.out.println(golden.toString());
     }
 }
+
+```
+
+Решение имате во 'Bank.java', но обидете се најпрво Вие, 
+па споредете дали сте решиле како што треба.
+
+Сѐ најдобро. )
+
+
+
+

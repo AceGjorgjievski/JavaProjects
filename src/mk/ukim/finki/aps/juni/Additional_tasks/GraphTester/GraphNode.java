@@ -1,4 +1,4 @@
-package mk.ukim.finki.aps.juni.Ispiti.Zagaduvanje.other;
+package mk.ukim.finki.aps.juni.Additional_tasks.GraphTester;
 
 import java.util.LinkedList;
 
