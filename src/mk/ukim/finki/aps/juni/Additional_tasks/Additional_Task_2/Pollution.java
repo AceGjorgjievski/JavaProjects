@@ -1,4 +1,4 @@
-package mk.ukim.finki.aps.juni.Additional_tasks.Additional_Task_1;
+package mk.ukim.finki.aps.juni.Additional_tasks.Additional_Task_2;
 
 
 import java.util.LinkedList;
