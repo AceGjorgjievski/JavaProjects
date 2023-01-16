@@ -321,7 +321,7 @@ class Point {
     }
 }
 
-public class Main {
+public class Pollution {
 
 
     public static void main(String[] args) {
