@@ -1,4 +1,4 @@
-package mk.ukim.finki.np.juni.vlez;
+package mk.ukim.finki.np.juni.EntryTask;
 
 
 import java.io.*;
@@ -82,10 +82,6 @@ class TextProcessor {
 
     }
 }
-
-/**
- *
- */
 
 
 public class EntryTask {
