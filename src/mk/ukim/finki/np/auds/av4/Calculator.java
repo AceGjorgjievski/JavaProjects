@@ -1,5 +1,6 @@
 package mk.ukim.finki.np.auds.av4;
 
+
 public class Calculator {
     private double result;
     private Strategy strategy;
