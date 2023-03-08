@@ -1,2 +1,3 @@
-#Software quality and testing
-##Auditory exercises
+# Software quality and testing
+
+## Auditory exercises
