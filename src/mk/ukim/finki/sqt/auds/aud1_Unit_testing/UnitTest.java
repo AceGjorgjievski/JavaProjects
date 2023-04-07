@@ -1,7 +1,9 @@
-package mk.ukim.finki.sqt.aud1_Unit_testing;
+package mk.ukim.finki.sqt.auds.aud1_Unit_testing;
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class UnitTest {
     String message = "Hello World!";

@@ -1,7 +1,10 @@
-package mk.ukim.finki.sqt.aud1_Unit_testing;
+package mk.ukim.finki.sqt.auds.aud1_Unit_testing;
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class Unit2Test {
     String message = "Robert";
@@ -12,5 +15,10 @@ public class Unit2Test {
         System.out.println("Inside testSalutationMessage()");
         message = "Hi!" + "Robert";
         assertEquals(message, messageUtil.salutationMessage());
+    }
+
+    @Test
+    public void testMessageUtilObject() {
+        assertNotNull(messageUtil);
     }
 }
