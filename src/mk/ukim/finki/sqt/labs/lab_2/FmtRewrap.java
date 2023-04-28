@@ -73,6 +73,10 @@ public class FmtRewrap {
         return (S);
     }
 
+
+
+    // ne znam kako da raboti ova xD
+    //did not work for starting this java program from CLI
     public static void main(String[] argv) {  // Driver method for fmtRewrap
         // Read an array and an integer from standard input, call fmtRewrap()
         int integer = 0;
