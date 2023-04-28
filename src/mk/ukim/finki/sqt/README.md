@@ -1,3 +1,3 @@
 # Software quality and testing
 
-## Auditory exercises & labs (:
+## Auditory exercises 
