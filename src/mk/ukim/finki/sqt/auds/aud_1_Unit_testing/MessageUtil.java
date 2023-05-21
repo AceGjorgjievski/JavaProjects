@@ -1,4 +1,4 @@
-package mk.ukim.finki.sqt.auds.aud1_Unit_testing;
+package mk.ukim.finki.sqt.auds.aud_1_Unit_testing;
 
 public class MessageUtil {
     private String message;
