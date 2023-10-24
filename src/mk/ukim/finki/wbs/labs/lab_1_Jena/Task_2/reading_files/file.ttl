@@ -1,0 +1,22 @@
+<https://www.linkedin.com/in/ace-gjorgjievski-341821292/>
+        <http://www.w3.org/2001/vcard-rdf/3.0#ADR>
+                [ <http://www.w3.org/2001/vcard-rdf/3.0#Country>
+                          "Macedonia";
+                  <https://example.org/city>  "Skopje";
+                  <https://example.org/continent>
+                          "Europe"
+                ];
+        <http://www.w3.org/2001/vcard-rdf/3.0#BDAY>
+                "07-05-2001";
+        <http://www.w3.org/2001/vcard-rdf/3.0#EMAIL>
+                "ace.gjorgjievski6@gmail.com";
+        <http://www.w3.org/2001/vcard-rdf/3.0#FN>
+                "Ace Gjorgjievski";
+        <http://www.w3.org/2001/vcard-rdf/3.0#Family>
+                "Gjorgjievski";
+        <http://www.w3.org/2001/vcard-rdf/3.0#Given>
+                "Ace";
+        <http://xmlns.com/foaf/0.1/age>
+                "22";
+        <http://xmlns.com/foaf/0.1/gender>
+                "male" .

@@ -1,0 +1,11 @@
+<https://www.linkedin.com/in/ace-gjorgjievski-341821292/> <http://www.w3.org/2001/vcard-rdf/3.0#Family> "Gjorgjievski" .
+<https://www.linkedin.com/in/ace-gjorgjievski-341821292/> <http://www.w3.org/2001/vcard-rdf/3.0#Given> "Ace" .
+<https://www.linkedin.com/in/ace-gjorgjievski-341821292/> <http://xmlns.com/foaf/0.1/age> "22" .
+<https://www.linkedin.com/in/ace-gjorgjievski-341821292/> <http://www.w3.org/2001/vcard-rdf/3.0#EMAIL> "ace.gjorgjievski6@gmail.com" .
+<https://www.linkedin.com/in/ace-gjorgjievski-341821292/> <http://www.w3.org/2001/vcard-rdf/3.0#BDAY> "07-05-2001" .
+<https://www.linkedin.com/in/ace-gjorgjievski-341821292/> <http://www.w3.org/2001/vcard-rdf/3.0#ADR> _:B002e82e1X2Dab97X2D4bd1X2D8622X2D8a6dbdc672aa .
+<https://www.linkedin.com/in/ace-gjorgjievski-341821292/> <http://xmlns.com/foaf/0.1/gender> "male" .
+<https://www.linkedin.com/in/ace-gjorgjievski-341821292/> <http://www.w3.org/2001/vcard-rdf/3.0#FN> "Ace Gjorgjievski" .
+_:B002e82e1X2Dab97X2D4bd1X2D8622X2D8a6dbdc672aa <https://example.org/city> "Skopje" .
+_:B002e82e1X2Dab97X2D4bd1X2D8622X2D8a6dbdc672aa <https://example.org/continent> "Europe" .
+_:B002e82e1X2Dab97X2D4bd1X2D8622X2D8a6dbdc672aa <http://www.w3.org/2001/vcard-rdf/3.0#Country> "Macedonia" .

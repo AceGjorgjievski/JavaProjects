@@ -1,0 +1,20 @@
+<rdf:RDF
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#"
+        xmlns:j.0="https://example.org/"
+        xmlns:j.1="http://xmlns.com/foaf/0.1/">
+    <rdf:Description rdf:about="https://www.linkedin.com/in/ace-gjorgjievski-341821292/">
+        <vcard:Family>Gjorgjievski</vcard:Family>
+        <vcard:Given>Ace</vcard:Given>
+        <j.1:age>22</j.1:age>
+        <vcard:EMAIL>ace.gjorgjievski6@gmail.com</vcard:EMAIL>
+        <vcard:BDAY>07-05-2001</vcard:BDAY>
+        <vcard:ADR rdf:parseType="Resource">
+            <j.0:city>Skopje</j.0:city>
+            <j.0:continent>Europe</j.0:continent>
+            <vcard:Country>Macedonia</vcard:Country>
+        </vcard:ADR>
+        <j.1:gender>male</j.1:gender>
+        <vcard:FN>Ace Gjorgjievski</vcard:FN>
+    </rdf:Description>
+</rdf:RDF>
