@@ -1,0 +1,10 @@
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbp: <http://dbpedia.org/property/>
+
+SELECT DISTINCT ?date ?publisher ?originalTitle
+WHERE {
+    dbr:The_Little_Prince dbp:date ?date ;
+                                    dbo:publisher ?publisher ;
+                                    dbp:titleOrig ?originalTitle.
+}

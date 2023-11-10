@@ -1,0 +1,11 @@
+# children
+
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+
+SELECT DISTINCT ?child ?name ?date
+WHERE {
+  dbr:Donald_Trump dbo:child ?child .
+  ?child dbo:birthName ?name ;
+         dbo:birthDate ?date .
+}

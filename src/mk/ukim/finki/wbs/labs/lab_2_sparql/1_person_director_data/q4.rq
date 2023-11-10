@@ -1,0 +1,50 @@
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+
+SELECT DISTINCT ?movie, ?releaseDate
+WHERE {
+  {
+    ?movie dbo:director dbr:Woody_Allen ;
+           dbo:abstract ?abstract .
+    BIND(REGEX(?abstract, "\\b(\\d{4})\\b") AS ?releaseDate)
+  }
+  UNION
+  {
+    ?movie dbo:starring dbr:Woody_Allen ;
+           dbo:abstract ?abstract .
+    BIND(REGEX(?abstract, "\\b(\\d{4})\\b") AS ?releaseDate)
+  }
+  UNION
+  {
+    ?movie dbo:writer dbr:Woody_Allen ;
+           dbo:abstract ?abstract .
+    BIND(REGEX(?abstract, "\\b(\\d{4})\\b") AS ?releaseDate)
+  }
+} ORDER BY (?releaseDate)
+# pt.2
+# --
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT ?movie ?releaseYear
+WHERE {
+  {
+    ?movie dbo:director dbr:Woody_Allen ;
+           dbo:abstract ?abstractDirector .
+    FILTER(LANG(?abstractDirector) = "en" && regex(?abstractDirector, "\\b\\d{4}\\b"))
+  }
+  UNION
+  {
+    ?movie dbo:starring dbr:Woody_Allen ;
+           dbo:abstract ?abstractStarring .
+    FILTER(LANG(?abstractStarring) = "en" && regex(?abstractStarring, "\\b\\d{4}\\b"))
+  }
+  UNION
+  {
+    ?movie dbo:writer dbr:Woody_Allen ;
+           dbo:abstract ?abstractWriter .
+    FILTER(LANG(?abstractWriter) = "en" && regex(?abstractWriter, "\\b\\d{4}\\b"))
+  }
+BIND(COALESCE(?abstractWriter, ?abstractStarring, ?abstractDirector) AS ?releaseYear)
+}

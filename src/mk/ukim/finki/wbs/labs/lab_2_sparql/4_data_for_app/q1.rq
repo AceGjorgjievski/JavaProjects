@@ -1,0 +1,16 @@
+# Retrieve all the member of the 'The_Beatles' music band and for each member list their names,
+#  their dates of birth, their image and short description. At the end order them by their date of birth.
+
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+
+SELECT ?member ?birthDate ?abstract
+WHERE {
+  dbr:The_Beatles dbo:formerBandMember ?member.
+
+dbr:The_Beatles dbo:formerBandMember ?member.
+  ?member dbo:birthDate ?birthDate.
+  ?member dbo:abstract ?abstract .
+FILTER (lang(?abstract ) = "en")
+}
+ORDER BY ?birthDate

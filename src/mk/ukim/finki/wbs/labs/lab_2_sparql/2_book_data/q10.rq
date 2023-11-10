@@ -1,0 +1,50 @@
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbp: <http://dbpedia.org/property/>
+
+SELECT *
+WHERE {
+  dbr:The_Little_Prince dbo:author ?author .
+ ?books dbo:author  ?author .
+
+ {
+  SELECT *
+ WHERE {
+  ?books dbp:releaseDate ?date
+ }
+ }
+} ORDER BY ?date
+
+# mozhni dr odgovori:
+
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbp: <http://dbpedia.org/property/>
+
+SELECT *
+WHERE {
+   dbr:The_Little_Prince dbo:author ?author .
+
+   {
+   SELECT *
+  WHERE {
+     ?book dbo:author ?author .
+
+    {
+    SELECT *
+     ?
+   }
+  }
+   }
+}
+# ----
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbp: <http://dbpedia.org/property/>
+
+SELECT ?author ?book ?releaseDate
+WHERE {
+  dbr:The_Little_Prince dbo:author ?author .
+  ?book dbo:author ?author ;
+        dbp:releaseDate ?releaseDate .
+}

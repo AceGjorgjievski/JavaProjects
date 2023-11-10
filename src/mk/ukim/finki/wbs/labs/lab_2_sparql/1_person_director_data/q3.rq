@@ -1,0 +1,22 @@
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+SELECT ?movie ?role ?personName
+WHERE {
+ {
+    ?movie dbo:director dbr:Woody_Allen
+     BIND("Director", AS ?role)
+    BIND("Woody_Allen" AS ?personName)
+  }
+  UNION
+  {
+    ?movie dbo:starring dbr:Woody_Allen
+     BIND("Actor" AS ?role)
+    BIND("Woody_Allen" AS ?personName)
+  }
+  UNION
+  {
+    ?movie dbo:writer dbr:Woody_Allen
+     BIND("Writer" AS ?role)
+    BIND("Woody_Allen" AS ?personName)
+  }
+}

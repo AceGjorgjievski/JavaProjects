@@ -1,0 +1,12 @@
+# birthdates of the founders of the political parties that Donald J. Trump has been already
+
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbp: <http://dbpedia.org/property/>
+
+SELECT ?party ?founder ?birthDate
+WHERE {
+  dbr:Donald_Trump dbo:party ?party .
+  ?party dbp:founders ?founder .
+  ?founder dbo:birthDate ?birthDate .
+}

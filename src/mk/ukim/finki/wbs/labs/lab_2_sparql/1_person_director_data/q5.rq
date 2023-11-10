@@ -1,0 +1,28 @@
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT ?movie ?budget
+WHERE {
+  {
+    ?movie dbo:director dbr:Woody_Allen ;
+           dbp:budget ?budgetDirector .
+    FILTER(xsd:decimal(?budgetDirector) > 500000.0)
+    BIND(?budgetDirector AS ?budget)
+  }
+  UNION
+  {
+    ?movie dbo:starring dbr:Woody_Allen ;
+           dbp:budget ?budgetStarring .
+    FILTER(xsd:decimal(?budgetStarring) > 500000.0)
+    BIND(?budgetStarring AS ?budget)
+  }
+  UNION
+  {
+    ?movie dbo:writer dbr:Woody_Allen ;
+           dbp:budget ?budgetWriter .
+    FILTER(xsd:decimal(?budgetWriter) > 500000.0)
+    BIND(?budgetWriter AS ?budget)
+  }
+}
