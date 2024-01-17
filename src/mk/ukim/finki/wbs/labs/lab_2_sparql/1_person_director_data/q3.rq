@@ -4,7 +4,7 @@ SELECT ?movie ?role ?personName
 WHERE {
  {
     ?movie dbo:director dbr:Woody_Allen
-     BIND("Director", AS ?role)
+     BIND("Director" AS ?role)
     BIND("Woody_Allen" AS ?personName)
   }
   UNION
