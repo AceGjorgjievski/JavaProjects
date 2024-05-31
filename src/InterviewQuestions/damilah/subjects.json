@@ -1,0 +1,262 @@
+[
+  {
+    "Id": 1,
+    "Name": "Math",
+    "Description": "Study of numbers, shapes, and patterns.",
+    "NumberOfWeeklyClasses": 5,
+    "LiteratureUsed": [
+      {
+        "ISBN": "123456",
+        "Title": "Advanced Mathematics",
+        "Authors": [
+          {
+            "ISBN": "A123456",
+            "FirstName": "John",
+            "LastName": "Doe",
+            "BirthDate": "1970-01-01"
+          },
+          {
+            "ISBN": "A123457",
+            "FirstName": "Jane",
+            "LastName": "Smith",
+            "BirthDate": "1980-02-02"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 2,
+    "Name": "English",
+    "Description": "Study of English language and literature.",
+    "NumberOfWeeklyClasses": 4,
+    "LiteratureUsed": [
+      {
+        "ISBN": "789012",
+        "Title": "English Grammar",
+        "Authors": [
+          {
+            "ISBN": "A789012",
+            "FirstName": "Emily",
+            "LastName": "Bronte",
+            "BirthDate": "1975-03-03"
+          },
+          {
+            "ISBN": "A789013",
+            "FirstName": "Charlotte",
+            "LastName": "Bronte",
+            "BirthDate": "1985-04-04"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 3,
+    "Name": "Art",
+    "Description": "Study of visual arts, including painting and sculpture.",
+    "NumberOfWeeklyClasses": 3,
+    "LiteratureUsed": [
+      {
+        "ISBN": "345678",
+        "Title": "Art History",
+        "Authors": [
+          {
+            "ISBN": "A345678",
+            "FirstName": "Leonardo",
+            "LastName": "da Vinci",
+            "BirthDate": "1452-04-15"
+          },
+          {
+            "ISBN": "A345679",
+            "FirstName": "Michelangelo",
+            "LastName": "Buonarroti",
+            "BirthDate": "1475-03-06"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 4,
+    "Name": "Science",
+    "Description": "Study of the natural world.",
+    "NumberOfWeeklyClasses": 4,
+    "LiteratureUsed": [
+      {
+        "ISBN": "456789",
+        "Title": "Basic Science",
+        "Authors": [
+          {
+            "ISBN": "A456789",
+            "FirstName": "Isaac",
+            "LastName": "Newton",
+            "BirthDate": "1643-01-04"
+          },
+          {
+            "ISBN": "A456790",
+            "FirstName": "Albert",
+            "LastName": "Einstein",
+            "BirthDate": "1879-03-14"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 5,
+    "Name": "History",
+    "Description": "Study of past events.",
+    "NumberOfWeeklyClasses": 3,
+    "LiteratureUsed": [
+      {
+        "ISBN": "567890",
+        "Title": "World History",
+        "Authors": [
+          {
+            "ISBN": "A567890",
+            "FirstName": "Herodotus",
+            "LastName": "of Halicarnassus",
+            "BirthDate": "1984-07-04"
+          },
+          {
+            "ISBN": "A567891",
+            "FirstName": "Thucydides",
+            "LastName": "of Athens",
+            "BirthDate": "1960-05-11"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 6,
+    "Name": "Geography",
+    "Description": "Study of places and the relationships between people and their environments.",
+    "NumberOfWeeklyClasses": 3,
+    "LiteratureUsed": [
+      {
+        "ISBN": "678901",
+        "Title": "Physical Geography",
+        "Authors": [
+          {
+            "ISBN": "A678901",
+            "FirstName": "Carl",
+            "LastName": "Ritter",
+            "BirthDate": "1779-08-07"
+          },
+          {
+            "ISBN": "A678902",
+            "FirstName": "Alexander",
+            "LastName": "von Humboldt",
+            "BirthDate": "1769-09-14"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 7,
+    "Name": "Physics",
+    "Description": "Study of matter, its motion, and behavior through space and time.",
+    "NumberOfWeeklyClasses": 5,
+    "LiteratureUsed": [
+      {
+        "ISBN": "789013",
+        "Title": "Principles of Physics",
+        "Authors": [
+          {
+            "ISBN": "A789013",
+            "FirstName": "James",
+            "LastName": "Clerk Maxwell",
+            "BirthDate": "1831-06-13"
+          },
+          {
+            "ISBN": "A789014",
+            "FirstName": "Richard",
+            "LastName": "Feynman",
+            "BirthDate": "1918-05-11"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 8,
+    "Name": "Chemistry",
+    "Description": "Study of substances, their properties, and how they interact.",
+    "NumberOfWeeklyClasses": 4,
+    "LiteratureUsed": [
+      {
+        "ISBN": "890124",
+        "Title": "Organic Chemistry",
+        "Authors": [
+          {
+            "ISBN": "A890124",
+            "FirstName": "Marie",
+            "LastName": "Curie",
+            "BirthDate": "1867-11-07"
+          },
+          {
+            "ISBN": "A890125",
+            "FirstName": "Dmitri",
+            "LastName": "Mendeleev",
+            "BirthDate": "1834-02-08"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 9,
+    "Name": "Biology",
+    "Description": "Study of living organisms.",
+    "NumberOfWeeklyClasses": 4,
+    "LiteratureUsed": [
+      {
+        "ISBN": "901235",
+        "Title": "Biology: The Essentials",
+        "Authors": [
+          {
+            "ISBN": "A901235",
+            "FirstName": "Charles",
+            "LastName": "Darwin",
+            "BirthDate": "1809-02-12"
+          },
+          {
+            "ISBN": "A901236",
+            "FirstName": "Gregor",
+            "LastName": "Mendel",
+            "BirthDate": "1822-07-20"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 10,
+    "Name": "Philosophy",
+    "Description": "Study of the fundamental nature of knowledge, reality, and existence.",
+    "NumberOfWeeklyClasses": 2,
+    "LiteratureUsed": [
+      {
+        "ISBN": "112234",
+        "Title": "Introduction to Philosophy",
+        "Authors": [
+          {
+            "ISBN": "A112234",
+            "FirstName": "Plato",
+            "LastName": "",
+            "BirthDate": "1926-05-21"
+          },
+          {
+            "ISBN": "A112235",
+            "FirstName": "Aristotle",
+            "LastName": "",
+            "BirthDate": "1928-03-18"
+          }
+        ]
+      }
+    ]
+  }
+]
