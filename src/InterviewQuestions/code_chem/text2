@@ -1,0 +1,37 @@
+Challenge 2
+Power of Marbles
+For the more adventurous players, the game host presents another challenge.
+
+
+Using the same game records from Challenge 1, determine the minimum number of marbles of each color required for each game to be possible.
+
+
+The game records from Challenge 1:
+
+5
+Game 1: 2 blue, 4 yellow; 3 yellow, 2 green, 6 blue; 1 green
+Game 2: 2 blue, 1 green; 3 green, 4 blue, 1 yellow; 1 green, 3 blue
+Game 3: 3 green, 6 blue, 20 yellow; 5 blue, 6 yellow, 13 green; 5 green, 1 yellow
+Game 4: 2 green, 3 yellow, 9 blue; 3 green, 9 yellow; 3 green, 15 blue, 14 yellow
+Game 5: 6 yellow, 2 blue, 3 green; 2 blue, 3 yellow, 1 green
+
+For example: for Game 1 to be possible there should be at least 4 yellow,
+2 green and 6 blue marbles in the bowl. Any other configuration of marbles
+that contains less marbles of any color would make that game impossible.
+
+
+Your task is to find the minimum number of marbles needed for each game to be
+possible and multiply them together. That is the power of the game. In the example
+mentioned above, the power of Game 1 would be 4x2x6=48. The powers of games 2-5 are 12, 1560, 630, and 36, respectively.
+
+
+The expected result here is the sum of the powers of all games. Print that number
+to the standard output. For the example input above the expected result is 2286,
+since adding up the powers of its five games produces the sum 2286 (48+12+1560+630+36).
+
+
+Expected output:
+
+2286
+
+Happy coding!
