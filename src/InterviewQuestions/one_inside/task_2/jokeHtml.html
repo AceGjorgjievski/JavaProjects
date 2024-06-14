@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="wrap-container">
+    <div class="container-fluid">
+
+        <div class="head">
+            <h2>Flashcards!</h2>
+        </div>
+
+        <div id="joke-container" class="flash-card">
+            <p id="setup"></p>
+            <p id="punchline"></p>
+            <p id="id"></p>
+            <p id="type"></p>
+        </div>
+
+        <button id="button" onclick="handleClick()">Replace the setup with punchline</button>
+    </div>
+</div>
+
+
+    <script>
+
+        const jokeObj = {}
+        const URL = "https://official-joke-api.appspot.com/random_joke";
+
+        async function fetchFromApi() {
+            try {
+                const response = await fetch(URL);
+                if (!response.ok) {
+                    console.log(`error status: ${response.status}`)
+                }
+                const joke = await response.json();
+                console.log(joke);
+                jokeObj.type = joke.type;
+                jokeObj.id = joke.id;
+                jokeObj.setup = joke.setup;
+                jokeObj.punchline = joke.punchline;
+
+                console.log(jokeObj.type);
+
+                document.getElementById("setup").textContent = "Setup: " + jokeObj.setup;
+                document.getElementById("id").textContent = "id: "+ jokeObj.id;
+                document.getElementById("punchline").textContent = "punchline: " + jokeObj.punchline;
+                document.getElementById("type").textContent = "type: " + jokeObj.type;
+
+            } catch (error) {
+                console.error('Error fetching the joke:', error);
+            }
+        }
+
+        fetchFromApi();
+
+        function handleClick() {
+            document.getElementById("setup").textContent = "Setup: (replaced with punchline): "+ jokeObj.punchline;
+        }
+
+    </script>
+
+</body>
+</html>
