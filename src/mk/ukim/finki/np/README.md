@@ -1,5 +1,8 @@
 ### Definitions - JAVA
 
+**```Ctrl+D```** ends input stream in a Java 
+program that reads from the console using ``System.in``.
+
 
 **STATIC BLOCK:** e block kade shto mozhe da se pravi inicijalizacija na static promenlivi koi shto kje gi incijalizirame tamu, a toj kod vo blockot kje se izvishi koga klasata kje se vchita vo memorija.
 
