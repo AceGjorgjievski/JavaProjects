@@ -13,6 +13,11 @@ if(account instaceof A) => da e objekt od A ili od site koi shto go nasleduvaat 
 **ANONIMNA KLASA:** klasa bez ime, za edna upotreba, se instancira vo daden moment se koristi vo toj moment
 -sekoja anonimna klasa mora da implementira interfejs
 
+**IMPLEMENTACIJA NA INTERFACE:** konkretna implementacija na interface znachi deka:
+1. klasa koja go implementira
+2. anonimna klasa
+3. lambda expression (ova e izvodlivo samo preku funkciski interface (samo eden abstract method shto ima))
+
 **FUNKCISKI INTERFEJSI**:
 - **LAMBDA EXPRESSION**: se koristi koga imame funkciski interfejs i sakame da go implementirame
 
@@ -30,10 +35,12 @@ koj prima eden argument i koj znae kako da go 'hendla' toj argument
 **BUFFEREDREADER** klasa za chitanje na podatoci, koja shto ima nekolku prednosti od Scanner, ima pogolem buffer, pobrz vo chitanje;
 nudi mozhnost da gi zememe site linii(.lines()); (**tret save za razlika od scanner)
 
-**reduce()**: od povekje neshta sakam edno na kraj
-**sorted()**: vo pozadina kje go razgleda compareTo() metodot za da znae na koj nachin da sortira; ako nemame compareTo kje se pobuni sorted(), nema da znae kako da sortira
-
-**OPTIONAL**: pomaga da se spravime so nullPRTExceptions (pr. kutija i vnatra topka, ako ima topka okej mozhe da se zeme, ako ne eve ti prazna kutija)
+- **reduce()**: od povekje neshta sakam edno na kraj
+- **sorted()**: vo pozadina kje go razgleda compareTo() metodot za da znae na koj nachin da sortira; ako nemame compareTo kje se pobuni sorted(), nema da znae kako da sortira
+- **sum()/count()**: sum() mora da raboti na integers ili doubles (znae samo da sobira ili integers ili double); count()
+        znae da prebroi elementi od bilo koj tip (vrakja kolku elementi ima vo stream-ot i raboti na 
+        bilo koj stream)
+- **OPTIONAL**: pomaga da se spravime so nullPRTExceptions (pr. kutija i vnatra topka, ako ima topka okej mozhe da se zeme, ako ne eve ti prazna kutija)
 vrakja prazen optional objekt ako nema;
 
 **ObjectOutputStream**: nekoj koj shto kje ni ovozmozhi zapishuvanje vo binarna dadoteka
@@ -42,12 +49,13 @@ vrakja prazen optional objekt ako nema;
 
 SITE SETOVI SE KORISTAT ZA DA IZBEGNEME DUPLIKATI, TOA E ZAEDNICHKO ZA SITE
 
+Sets complexity: [here](https://simplenotions.wordpress.com/2009/05/13/java-standard-data-structures-big-o-notation/) 
 - **TreeSet**: mora elementite da se comparable, i ako stavime duplikate, gi ingorira, unikatno; se koristi za da gi sortirame elementite sprored nekoj comparator
-
+   - koga da go koristime? Koga ne ni trebaat duplikati, da bidat sortirani elementite (idealna situacija)
 - **HashSet**: najednostavna vremensta kompleksnost, no redosledot na elementite ne se zachuvuva
-
+   - koga da go koristime? Koga kompleksnosta da ne nadminuva O(1)
 - **LinkedHashSet**: ednostavna kompleksnost, da ne se sortirani elementite, no da go zachuvame redosled
-
+   - koga da go koristime? O(1) kompleksnost + zachuvuvanje na redosledot
 **MAPS**
 
 (mapite kje se potrebni za broenje na pojavuvanja na nekoi elementi; za grupiranje)
@@ -59,7 +67,7 @@ Nema duplikat na kluchevi vo bilo koja mapa
 izbegnuva duplikat kluchevi, ako dodademe so nov kluch kje go prebrishe
 mapata e sortirana spored K;
 
-- **HashMap**: se dodavaat vo kofiski spored hash(K), go izmestuva redosledot
+- **HashMap**: se dodavaat vo kofiski spored hash(K), go izmestuva redosledot,
 elementite shto se vo tip K, mora da imaat overriden hashCode();
 
 - **LinkedHashMap**: redosledot na kluchevite kje si ostane kako shto sme gi dodale
